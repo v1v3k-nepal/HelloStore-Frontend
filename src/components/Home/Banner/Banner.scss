@@ -1,0 +1,112 @@
+@import "../../../css-config/mixins.scss";
+
+.hero-banner{
+    padding: 40px 0;
+    position: relative;
+    background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+    @include md{
+        height: calc(100vh - 80px);
+    }
+
+    .content{
+        height: 100%;
+        max-width: calc(100% - 20px);
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        flex-direction: column-reverse;
+        position: relative;
+        margin: 0 auto;
+        @include md{
+            flex-direction: row;
+            max-width: 1200px;
+        }
+
+        .banner-img{
+            width: 200px;
+            position: relative;
+            margin-bottom: 20px;
+            z-index: 9;
+            @include md{
+                width: 500px;
+                margin-right: 60px;
+                margin-top: 50px;
+                margin-bottom: 0;
+            }
+            @include xxl{
+                // width: 600px;
+                margin-right: 0;
+                margin-top: 0;
+            }
+        }
+
+        .text-content{
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            @include md{
+                position: absolute;
+                left: 50px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @include xxl{
+                left: 0;
+            }
+
+            h1{
+                color: #fff;
+                font-size: 80px;
+                font-weight: 700;
+                margin-bottom: 20px;
+                line-height: 1;
+                @include md{
+                    font-size: 180px;
+                }
+            }
+
+            p{
+                max-width: 300px;
+                font-size: 14px;
+                margin-bottom: 20px;
+                line-height: 20px;
+                @include md{
+                    font-size: 18px;
+                    margin-bottom: 40px;
+                    max-width: 500px;
+                    line-height: 24px;
+                }
+            }
+
+            .ctas{
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+
+                .banner-cta{
+                    padding: 10px 20px;
+                    border: 2px solid #fff;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                    width: fit-content;
+
+                    &.v2{
+                        background: #fff;
+                        color: #000;
+                    }
+
+                    &:hover{
+                        opacity: 0.6;
+                    }
+                }
+            }
+            
+        }
+        
+    }
+}
