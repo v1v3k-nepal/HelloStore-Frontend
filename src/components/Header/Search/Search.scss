@@ -1,0 +1,134 @@
+@import "../../../css-config/mixins.scss";
+
+.search-modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+    animation: slideSearchWindow 0.3s ease forwards;
+
+    .form-field{
+        display: flex;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        padding: 10px 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        @include md{
+            padding: 20px 0;
+        }
+        input{
+            max-width: 1200px;
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+            @include md{
+                font-size: 48px;
+                height: 80px;
+            }
+            &::placeholder{
+                color:#212121;
+            }
+        }
+
+        .close-btn{
+            position: absolute;
+            cursor: pointer;
+            font-size: 25px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include md{
+                font-size: 50px;
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .search-result-content{
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        @include md{
+            max-width: 800px;
+        }
+        .start-msg{
+            text-align: center;
+            margin-top: 20px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        .search-results{
+            margin: 20px 0;
+            height: calc(100vh - 110px);
+            overflow: auto;
+            @include md{
+                height: calc(100vh - 160px);
+            }
+
+            .search-result-item{
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+
+                .img-container{
+                    height: 60px;
+                    width: 60px;
+                    flex-shrink: 0;
+                    background-color: rgba(0, 0, 0, 0.05);
+                    img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+
+                .product-details{
+                    overflow: hidden;
+                    .name{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        font-size: 16px;
+                        font-weight: 600;
+                        margin-bottom: 10px;
+                        line-height: 1;
+                        display: block;
+                    }
+
+                    .desc{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        color: rgba(0, 0, 0, 0.5);
+                        font-size: 14px;
+                        line-height: 1;
+                        display: block;
+                    }
+
+                    .price{
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideSearchWindow {
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(0%);
+    } 
+}
