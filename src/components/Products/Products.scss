@@ -1,0 +1,39 @@
+@import "../../css-config/mixins.scss";
+
+.products-container{
+    margin: 50px 0;
+    @include md{
+        margin: 75px 0;
+    }
+    .sec-heading{
+        font-size: 18px;
+        margin-bottom: 20px;
+        font-weight: 500;
+        text-transform: uppercase;
+        @include md{
+            font-size: 24px;
+            margin-bottom: 35px;
+        }
+
+        &:after{
+            content: "";
+            display: block;
+            margin-top: 5px;
+            height: 3px;
+            width: 50px;
+            background: #8e2d8e;
+            @include md{
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .products{
+        display: flex;
+        flex-flow: wrap;
+        gap: 10px;
+        @include md{
+            gap:20px;
+        }
+    }
+}
