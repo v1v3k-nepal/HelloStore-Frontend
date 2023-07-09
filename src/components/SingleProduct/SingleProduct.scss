@@ -1,0 +1,165 @@
+@import "../../css-config/mixins.scss";
+
+.single-product-main-content {
+  margin: 20px 0;
+  @include md {
+    margin: 75px 0;
+  }
+
+  .layout {
+    max-width: calc(100% - 20px);
+    margin: 0 auto;
+    @include md {
+      max-width: 1200px;
+    }
+  }
+
+  .single-product-page {
+    display: flex;
+    flex-direction: column;
+    @include md {
+      flex-direction: row;
+    }
+
+    .left {
+      background-color: rgba(0, 0, 0, 0.05);
+      flex-shrink: 0;
+      width: 100%;
+      @include md {
+        width: 600px;
+        height: 600px;
+      }
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+      @include md {
+        padding: 0 35px;
+      }
+
+      .name{
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 20px;
+        @include md{
+            font-size: 24px;
+            line-height: 32px;
+        }
+      }
+
+      .price{
+        font-size: 24px;
+        margin-bottom: 20px;
+        line-height: 32px;
+      }
+
+      .desc{
+        font-size: 14px;
+        color: #6b6b6b;
+        margin-bottom: 20px;
+        line-height: 20px;
+        @include md{
+            font-size: 16px;
+            line-height: 24px;
+        }
+      }
+
+      .cart-buttons{
+        display: flex;
+        gap: 10px;
+        @include md{
+            margin-top: 30px;
+        }
+
+        .quantity-buttons{
+            display: flex;
+            gap: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            height: 50px;
+            width: fit-content;
+
+            span{
+                width: 40px;
+                font-size: 18px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: #6b6b6b;
+
+                &:nth-child(1){
+                    border-right: 2px solid rgba(0, 0, 0, 0.2);
+                    padding: 0 5px;
+                }
+
+                &:nth-child(2){
+                    min-width: 30px;
+                    width: fit-content;
+                }
+
+                &:nth-child(3){
+                    border-left: 2px solid rgba(0, 0, 0, 0.2);
+                    padding: 0 5px;
+                }
+            }
+        }
+
+        .add-to-cart-button{
+            outline: 0;
+            border: 0;
+            height: 50px;
+            width: 180px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #8e2de2;
+            color: #fff;
+            gap: 10px;
+            flex-grow: 1;
+            @include md{
+                flex-grow: unset;
+            }
+        }
+      }
+
+      .divider{
+        margin: 20px 0;
+        height: 2px;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+
+      .info-item{
+        .text-bold{
+            font-size: 18px;
+            font-weight: 500;
+            display: block;
+            margin-bottom: 20px;
+            // &:nth-child(1){
+            //     margin-bottom: 20px;
+            // }
+
+            span{
+                font-size: 16px;
+                font-weight: 400;
+                cursor: pointer;
+                margin-left: 5px;
+                color: #6b6b6b;
+
+                svg{
+                    margin-right: 10px;
+                }
+            }
+        }
+      }
+    }
+  }
+}
