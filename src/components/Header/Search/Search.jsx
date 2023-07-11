@@ -4,6 +4,7 @@ import { MdClose } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import useFetch from "../../../hooks/useFetch";
 const Search = ({ setShowSearch }) => {
+  
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
