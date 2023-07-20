@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+@import "../../css-config/mixins.scss";
+
+.failure-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid rgb(164, 1, 31);
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+    height: fit-content;
+    // width: 300px;
+    position: relative;
+    @include md{
+      width: 1200px;
+    }
+
+    svg{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+    }
+
+    .content {
+      border-radius: 200px;
+      background: #eeeeed;
+      max-width: 150px;
+      max-height: 150px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+
+      i {
+        color: #a90404;
+        font-size: 95px;
+        line-height: 200px;
+        margin-right: 15px;
+      }
+    }
+
+    h1 {
+      color: #d02d35;
+      font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+      font-weight: 900;
+      font-size: 40px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #1c2229;
+      font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+      font-size: 20px;
+    }
+  }
+}
