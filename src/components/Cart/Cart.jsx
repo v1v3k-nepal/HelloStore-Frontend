@@ -30,7 +30,7 @@ const Cart = () => {
                   <BsCartX/>
                   <span>No Products in the Cart.</span>
                   <button className="return-cta" 
-                  onClick={()=> {navigate("/"); setShowCart(false)}}>
+                  onClick={()=> {navigate("/hellostore-frontend"); setShowCart(false)}}>
                     RETURN TO SHOP
                   </button>
                 </div>
