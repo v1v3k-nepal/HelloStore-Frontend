@@ -17,11 +17,16 @@ import {
 
 const SingleProduct = () => {
 
-  const {handleAddToCart} = useContext(Context);
+  const {handleAddToCart, products} = useContext(Context);
 
   const [quantity, setQuantity] = useState(1);
   const {id} = useParams();
-  const data = useFetch(`/api/products?populate=*&[filters][id]=${id}`)
+
+  // const data = useFetch(`/api/products?populate=*&[filters][id]=${id}`);
+
+  const singleProduct = products.data.filter((item)=> item.id ==id);
+
+  // console.log(singleProduct);
 
   const increment = ()=>{
     setQuantity((prevState)=>prevState+1);
@@ -34,9 +39,11 @@ const SingleProduct = () => {
     })
   }
 
-  if(!data) return;
+  // if(!data) return;
+  if(!singleProduct) return;
 
-  const productDetails = data?.data[0]?.attributes;
+  // const productDetails = data?.data[0]?.attributes;
+  const productDetails = singleProduct[0]?.attributes;
 
   return (
     <>
@@ -64,7 +71,8 @@ const SingleProduct = () => {
 
               <button className="add-to-cart-button"
               onClick={()=>{
-                handleAddToCart(data?.data?.[0], quantity); 
+                // handleAddToCart(data?.data?.[0], quantity); 
+                handleAddToCart(singleProduct[0], quantity);
                 setQuantity(1);
                 toast.success("Product Added To Cart");          
               }}>
@@ -78,7 +86,7 @@ const SingleProduct = () => {
             <div className="info-item">
               <span className="text-bold">
                 Category: 
-                <span>{data?.data[0]?.attributes?.categories?.data[0]?.attributes?.title}</span>
+                <span>{productDetails?.categories?.data[0]?.attributes?.title}</span>
               </span>
 
               <span className="text-bold">
