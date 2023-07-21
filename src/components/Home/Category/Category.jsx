@@ -13,7 +13,8 @@ const Category = ({categories}) => {
             onClick={()=>navigate(`/category/${item.id}`)}
             className="category">
             <img src={
-              process.env.REACT_APP_DEV_URL + item.attributes.img.data.attributes.url
+              // process.env.REACT_APP_DEV_URL + item.attributes.img.data.attributes.url
+              item.attributes.img.data.attributes.url
               } 
               alt="" />
           </div>
