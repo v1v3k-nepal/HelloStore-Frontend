@@ -45,7 +45,7 @@ export const handleKhaltiPayment = async(cartItems,cartSubTotal)=>{
         // Redirect the user to the payment_url obtained from the response
         window.location.href = data.payment_url;
 
-        // console.log(data);
+        console.log(data);
       } catch (error) {
         console.log(error);
       }
