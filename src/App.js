@@ -8,8 +8,6 @@ import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import Footer from "./components/Footer/Footer";
 import AppContext from "./utils/context";
-import PaymentSuccess from "./components/PaymentStatus/PaymentSuccess"
-import PaymentFailure from "./components/PaymentStatus/PaymentFailure"
 import PaymentRedirection from "./components/PaymentStatus/PaymentRedirection";
 
 
@@ -19,12 +17,11 @@ function App(){
             <AppContext>
                 <Header/>
                 <Routes>
+                    <Route path="/hellostore-frontend" element={<Home/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/category/:id" element={<Category/>}/>
                     <Route path="/product/:id" element={<SingleProduct/>}/>
                     <Route exact path="/payment/" element={<PaymentRedirection/>}/>
-                    {/* <Route exact path="/success/" element={<PaymentSuccess />}/> */}
-                    {/* <Route exact path="/failure/" element={<PaymentFailure />}/> */}
                 </Routes>
                 <Newsletter/>
                 <Footer/>
