@@ -13,6 +13,7 @@ const AppContext = ({children}) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartCount, setCartCount] = useState(0);
   const [cartSubTotal, setCartSubTotal] = useState(0);
+  const [shippingCost, setShippingCost] = useState(0);
   const location = useLocation();
 
   useEffect(()=>{
@@ -45,12 +46,14 @@ const AppContext = ({children}) => {
       items = [...items, product]
     } 
     setCartItems(items);
+    localStorage.setItem("cartItemsLocal",items);
   }
 
   const handleRemoveFromCart = (product) =>{
     let items = [...cartItems];
     items = items.filter((p)=> p.id !== product.id);
     setCartItems(items);
+    localStorage.setItem("cartItemsLocal",items);
   }
 
   const handleCartProductQuantity = (type, product) => {
@@ -64,6 +67,7 @@ const AppContext = ({children}) => {
       items[index].attributes.quantity -=1;
     }
     setCartItems(items);
+    localStorage.setItem("cartItemsLocal",items);
   }
 
   return (
@@ -77,7 +81,8 @@ const AppContext = ({children}) => {
       cartSubTotal, setCartSubTotal,
       handleAddToCart,
       handleRemoveFromCart,
-      handleCartProductQuantity
+      handleCartProductQuantity,
+      shippingCost, setShippingCost
     }}>
         {children}
     </Context.Provider>

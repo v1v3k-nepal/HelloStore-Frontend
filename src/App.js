@@ -9,6 +9,7 @@ import Newsletter from "./components/Footer/Newsletter/Newsletter";
 import Footer from "./components/Footer/Footer";
 import AppContext from "./utils/context";
 import PaymentRedirection from "./components/PaymentStatus/PaymentRedirection";
+import Shipping from "./components/Cart/Shipping/Shipping"
 
 
 function App(){
@@ -22,6 +23,7 @@ function App(){
                     <Route path="/category/:id" element={<Category/>}/>
                     <Route path="/product/:id" element={<SingleProduct/>}/>
                     <Route exact path="/payment/" element={<PaymentRedirection/>}/>
+                    <Route path="/shipping" element={<Shipping/>}/>
                 </Routes>
                 <Newsletter/>
                 <Footer/>

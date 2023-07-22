@@ -10,7 +10,8 @@ import { handleKhaltiPayment } from '../PaymentStatus/paymentHandle';
 const Cart = () => {
 
   const navigate = useNavigate();
-  const {cartItems, setShowCart, cartSubTotal} = useContext(Context);
+  const {cartItems, setShowCart, cartSubTotal, setShippingCost} = useContext(Context);
+  // const cartItems = localStorage.getItem("cartItemsLocal");
 
   return (
     <div className='cart-panel'>
@@ -47,7 +48,8 @@ const Cart = () => {
                     </div>
           
                     <div className="button">
-                      <button className='checkout-cta' onClick={()=>handleKhaltiPayment(cartItems,cartSubTotal)}>Checkout</button>
+                      {/* <button className='checkout-cta' onClick={()=>handleKhaltiPayment(cartItems,cartSubTotal)}>Checkout</button> */}
+                      <button className='checkout-cta' onClick={()=>{navigate("/shipping"); setShowCart(false)}}>Checkout</button>
                     </div>
                     
                   </div>
