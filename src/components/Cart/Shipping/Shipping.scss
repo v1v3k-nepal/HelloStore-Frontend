@@ -15,11 +15,9 @@ body {
   margin: 20px auto;
   flex-flow: wrap;
 
-
   .billing-details {
-
     padding: 0 20px;
-    @include md{
+    @include md {
       max-height: 500px;
       overflow-y: scroll;
     }
@@ -37,7 +35,7 @@ body {
       display: flex;
       gap: 20px;
       flex-direction: column;
-      @include md{
+      @include md {
         flex-direction: row;
       }
 
@@ -46,7 +44,7 @@ body {
         display: flex;
         flex-direction: column;
         min-width: 320px;
-        @include md{
+        @include md {
           width: 300px;
         }
 
@@ -68,6 +66,27 @@ body {
           border-radius: 5px;
           padding: 0 15px;
           width: 100%;
+        }
+      }
+
+      .form-errors {
+        color: red;
+        font-size: 14px;
+      }
+
+      .submit-btn {
+        button {
+          height: 50px;
+          outline: none;
+          background: rgb(140, 27, 165);
+          color: #fff;
+          padding: 0 5px;
+          margin: 20px 0;
+          width: 100%;
+          border: none;
+          border-radius: 5px;
+          font-size: 20px;
+          cursor: pointer;
         }
       }
 
@@ -97,7 +116,7 @@ body {
     width: 600px;
     padding: 0px 25px;
     color: #707070;
-    @include md{
+    @include md {
       max-height: 500px;
       overflow-y: scroll;
       border: 2px solid #c0bfbf;
@@ -142,7 +161,7 @@ body {
           overflow: hidden;
           white-space: nowrap;
           margin-bottom: 10px;
-          @include md{
+          @include md {
             max-width: 400px;
           }
         }
@@ -184,7 +203,7 @@ body {
         }
       }
 
-      button{
+      button {
         height: 50px;
         outline: none;
         background: rgb(140, 27, 165);

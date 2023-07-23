@@ -1,13 +1,44 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Context } from "../../../utils/context";
 import "./Shipping.scss";
+import { useFormik } from "formik";
+import { shippingDataSchema } from "../../../schemas";
+
+const initialValues = {
+  fullname: "",
+  mobile: "",
+  email: "",
+  province: "",
+  city: "",
+  area: "",
+  address: "",
+  landmark: "",
+};
 
 const Shipping = () => {
   const { cartItems, cartSubTotal, shippingCost } = useContext(Context);
 
-  const placeOrder = ()=>{
-    
-  }
+  const {
+    values,
+    errors,
+    touched,
+    handleSubmit,
+    submitForm,
+    handleChange,
+    handleBlur,
+  } = useFormik({
+    initialValues: initialValues,
+    validationSchema: shippingDataSchema,
+    onSubmit: (values, action) => {
+      // console.log(values);
+      placeOrder(values);
+      action.resetForm();
+    },
+  });
+
+  const placeOrder = (shippingData) => {
+    console.log(shippingData);
+  };
 
   return (
     <div className="container">
@@ -22,9 +53,16 @@ const Shipping = () => {
               <input
                 id="fullname"
                 type="text"
+                name="fullname"
+                value={values.fullname}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Full Name"
-                required
+                // required
               />
+              {errors.fullname && touched.fullname ? (
+                <p className="form-errors">{errors.fullname}</p>
+              ) : null}
             </div>
 
             <div className="input-box">
@@ -34,9 +72,16 @@ const Shipping = () => {
               <input
                 id="mobile"
                 type="phone"
+                name="mobile"
+                value={values.mobile}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Mobile Number"
-                required
+                // required
               />
+              {errors.mobile && touched.mobile ? (
+                <p className="form-errors">{errors.mobile}</p>
+              ) : null}
             </div>
 
             <div className="input-box">
@@ -46,16 +91,29 @@ const Shipping = () => {
               <input
                 id="email"
                 type="email"
+                name="email"
+                value={values.email}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Email Address"
-                required
+                // required
               />
+              {errors.email && touched.email ? (
+                <p className="form-errors">{errors.email}</p>
+              ) : null}
             </div>
 
             <div className="select-box">
               <label htmlFor="province">
                 Province <span>*</span>
               </label>
-              <select name="province" id="province">
+              <select
+                name="province"
+                value={values.province}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                id="province"
+              >
                 <option hidden>Province</option>
                 <option value="koshi">Koshi</option>
                 <option value="madesh">Madesh</option>
@@ -65,6 +123,9 @@ const Shipping = () => {
                 <option value="karnali">Karnali</option>
                 <option value="sudurpaschim">Sudur Paschim</option>
               </select>
+              {errors.province && touched.province ? (
+                <p className="form-errors">{errors.province}</p>
+              ) : null}
             </div>
           </div>
 
@@ -76,9 +137,16 @@ const Shipping = () => {
               <input
                 id="city"
                 type="text"
+                name="city"
+                value={values.city}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="City Name"
-                required
+                // required
               />
+              {errors.city && touched.city ? (
+                <p className="form-errors">{errors.city}</p>
+              ) : null}
             </div>
 
             <div className="input-box">
@@ -88,9 +156,16 @@ const Shipping = () => {
               <input
                 id="area"
                 type="text"
+                name="area"
+                value={values.area}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Area"
-                required
+                // required
               />
+              {errors.area && touched.area ? (
+                <p className="form-errors">{errors.area}</p>
+              ) : null}
             </div>
 
             <div className="input-box">
@@ -100,9 +175,16 @@ const Shipping = () => {
               <input
                 id="address"
                 type="text"
+                name="address"
+                value={values.address}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="Street Name/ House Number"
-                required
+                // required
               />
+              {errors.address && touched.address ? (
+                <p className="form-errors">{errors.address}</p>
+              ) : null}
             </div>
 
             <div className="input-box">
@@ -112,9 +194,20 @@ const Shipping = () => {
               <input
                 id="landmark"
                 type="text"
+                name="landmark"
+                value={values.landmark}
+                onChange={handleChange}
+                onBlur={handleBlur}
                 placeholder="E.g. Besides Bus Station"
               />
+              {errors.landmark && touched.landmark ? (
+                <p className="form-errors">{errors.landmark}</p>
+              ) : null}
             </div>
+
+            {/* <div className="submit-btn">
+              <button type="submit">Submit</button>
+            </div> */}
           </div>
         </form>
       </div>
@@ -165,7 +258,7 @@ const Shipping = () => {
             <div>&#8377;{cartSubTotal + shippingCost}</div>
           </div>
 
-          <button onClick={()=> placeOrder()}>Place Order</button>
+          <button onClick={() => submitForm()}>Place Order</button>
         </div>
       </div>
     </div>
