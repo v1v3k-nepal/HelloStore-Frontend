@@ -22,7 +22,7 @@ function App(){
                     <Route path="/" element={<Home/>}/>
                     <Route path="/category/:id" element={<Category/>}/>
                     <Route path="/product/:id" element={<SingleProduct/>}/>
-                    <Route exact path="/payment/" element={<PaymentRedirection/>}/>
+                    <Route exact path="/hellostore-frontend/payment/" element={<PaymentRedirection/>}/>
                     <Route path="/shipping" element={<Shipping/>}/>
                 </Routes>
                 <Newsletter/>

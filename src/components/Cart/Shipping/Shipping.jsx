@@ -43,7 +43,7 @@ const Shipping = () => {
 
     const paymentResponse = handleKhaltiPayment(cartItems, cartSubTotal, customerInfo);
     if (paymentResponse.payment_url == undefined) {
-      toast.error("Payment Amount is Invalid");
+      toast.error("Payment Validation Error");
     }
   };
 

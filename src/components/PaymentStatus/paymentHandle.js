@@ -1,7 +1,3 @@
-// import { makePaymentRequest } from "../../utils/api";
-// import { loadStripe } from "@stripe/stripe-js";
-
-// const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 export const handleKhaltiPayment = async (cartItems, cartSubTotal, customerInfo) => {
   // Generate a unique purchase_order_id for the transaction
@@ -9,8 +5,8 @@ export const handleKhaltiPayment = async (cartItems, cartSubTotal, customerInfo)
 
   // Prepare the payload for the payment request
   const payload = {
-    return_url: "http://localhost:3000/Payment",
-    website_url: "http://localhost:3000/",
+    return_url: "https:/v1v3k-nepal/github.io/hellostore-frontend/payment",
+    website_url: "https://v1v3k-nepal/github.io/hellostore-frontend",
     amount: cartSubTotal * 100, // Convert to paisa (assuming cartSubTotal is in rupees)
     purchase_order_id: purchaseOrderId,
     purchase_order_name: "Product Name",
@@ -72,16 +68,3 @@ export const paymentVerificationKhalti = async (pidxValue) => {
   }
 };
 
-//   export const handleStripePayment = async(cartItems)=>{
-//       try {
-//         const stripe = await stripePromise;
-//         const res = await makePaymentRequest.post("/api/orders", {
-//             products: cartItems,
-//         });
-//         await stripe.redirectToCheckout({
-//             sessionId: res.data.stripeSession.id,
-//         });
-//     } catch (err) {
-//         console.log(err);
-//     }
-// }
