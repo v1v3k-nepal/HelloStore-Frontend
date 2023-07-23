@@ -3,6 +3,7 @@ import { Context } from "../../../utils/context";
 import "./Shipping.scss";
 import { useFormik } from "formik";
 import { shippingDataSchema } from "../../../schemas";
+import { handleKhaltiPayment } from "../../PaymentStatus/paymentHandle";
 
 const initialValues = {
   fullname: "",
@@ -32,12 +33,22 @@ const Shipping = () => {
     onSubmit: (values, action) => {
       // console.log(values);
       placeOrder(values);
-      action.resetForm();
+      // action.resetForm();
     },
   });
 
   const placeOrder = (shippingData) => {
     console.log(shippingData);
+
+    const customerInfo = {
+      name: shippingData.fullname,
+      email: shippingData.email,
+      phone: shippingData.mobile,
+    };
+
+    console.log(customerInfo);
+
+    handleKhaltiPayment(cartItems, cartSubTotal, customerInfo);
   };
 
   return (

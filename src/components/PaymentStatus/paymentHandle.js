@@ -3,7 +3,7 @@
 
 // const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
-export const handleKhaltiPayment = async(cartItems,cartSubTotal)=>{
+export const handleKhaltiPayment = async(cartItems, cartSubTotal, customerInfo)=>{
       // Generate a unique purchase_order_id for the transaction
       const purchaseOrderId = "testOrder123";
   
@@ -14,11 +14,7 @@ export const handleKhaltiPayment = async(cartItems,cartSubTotal)=>{
                   amount: cartSubTotal * 100, // Convert to paisa (assuming cartSubTotal is in rupees)
                   purchase_order_id: purchaseOrderId,
                   purchase_order_name: "Product Name",
-                  customer_info: {
-                    "name": "Vivek Nepal",
-                    "email": "example@gmail.com",
-                    "phone": "9811496763"
-                  },
+                  customer_info: customerInfo,
 
                   product_details : cartItems.map((item) => ({
                     identity: item.id,
@@ -45,7 +41,7 @@ export const handleKhaltiPayment = async(cartItems,cartSubTotal)=>{
         // Redirect the user to the payment_url obtained from the response
         window.location.href = data.payment_url;
 
-        console.log(data);
+        // console.log(data);
       } catch (error) {
         console.log(error);
       }
