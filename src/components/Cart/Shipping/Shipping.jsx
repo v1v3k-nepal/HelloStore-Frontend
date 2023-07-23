@@ -4,6 +4,8 @@ import "./Shipping.scss";
 import { useFormik } from "formik";
 import { shippingDataSchema } from "../../../schemas";
 import { handleKhaltiPayment } from "../../PaymentStatus/paymentHandle";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const initialValues = {
   fullname: "",
@@ -19,19 +21,10 @@ const initialValues = {
 const Shipping = () => {
   const { cartItems, cartSubTotal, shippingCost } = useContext(Context);
 
-  const {
-    values,
-    errors,
-    touched,
-    handleSubmit,
-    submitForm,
-    handleChange,
-    handleBlur,
-  } = useFormik({
+  const { values, errors, isValid, touched, handleSubmit, submitForm, handleChange, handleBlur } = useFormik({
     initialValues: initialValues,
     validationSchema: shippingDataSchema,
     onSubmit: (values, action) => {
-      // console.log(values);
       placeOrder(values);
       // action.resetForm();
     },
@@ -48,11 +41,20 @@ const Shipping = () => {
 
     console.log(customerInfo);
 
-    handleKhaltiPayment(cartItems, cartSubTotal, customerInfo);
+    const paymentResponse = handleKhaltiPayment(cartItems, cartSubTotal, customerInfo);
+    if (paymentResponse.payment_url == undefined) {
+      toast.error("Payment Amount is Invalid");
+    }
+  };
+
+  const handleToast = () => {
+    toast.error("Please Enter Valid Shipping Data");
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="container">
+      <ToastContainer />
       <div className="billing-details">
         <h1>Billing Details</h1>
         <form action="" className="form">
@@ -71,9 +73,7 @@ const Shipping = () => {
                 placeholder="Full Name"
                 // required
               />
-              {errors.fullname && touched.fullname ? (
-                <p className="form-errors">{errors.fullname}</p>
-              ) : null}
+              {errors.fullname && touched.fullname ? <p className="form-errors">{errors.fullname}</p> : null}
             </div>
 
             <div className="input-box">
@@ -90,9 +90,7 @@ const Shipping = () => {
                 placeholder="Mobile Number"
                 // required
               />
-              {errors.mobile && touched.mobile ? (
-                <p className="form-errors">{errors.mobile}</p>
-              ) : null}
+              {errors.mobile && touched.mobile ? <p className="form-errors">{errors.mobile}</p> : null}
             </div>
 
             <div className="input-box">
@@ -109,22 +107,14 @@ const Shipping = () => {
                 placeholder="Email Address"
                 // required
               />
-              {errors.email && touched.email ? (
-                <p className="form-errors">{errors.email}</p>
-              ) : null}
+              {errors.email && touched.email ? <p className="form-errors">{errors.email}</p> : null}
             </div>
 
             <div className="select-box">
               <label htmlFor="province">
                 Province <span>*</span>
               </label>
-              <select
-                name="province"
-                value={values.province}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                id="province"
-              >
+              <select name="province" value={values.province} onChange={handleChange} onBlur={handleBlur} id="province">
                 <option hidden>Province</option>
                 <option value="koshi">Koshi</option>
                 <option value="madesh">Madesh</option>
@@ -134,9 +124,7 @@ const Shipping = () => {
                 <option value="karnali">Karnali</option>
                 <option value="sudurpaschim">Sudur Paschim</option>
               </select>
-              {errors.province && touched.province ? (
-                <p className="form-errors">{errors.province}</p>
-              ) : null}
+              {errors.province && touched.province ? <p className="form-errors">{errors.province}</p> : null}
             </div>
           </div>
 
@@ -155,9 +143,7 @@ const Shipping = () => {
                 placeholder="City Name"
                 // required
               />
-              {errors.city && touched.city ? (
-                <p className="form-errors">{errors.city}</p>
-              ) : null}
+              {errors.city && touched.city ? <p className="form-errors">{errors.city}</p> : null}
             </div>
 
             <div className="input-box">
@@ -174,9 +160,7 @@ const Shipping = () => {
                 placeholder="Area"
                 // required
               />
-              {errors.area && touched.area ? (
-                <p className="form-errors">{errors.area}</p>
-              ) : null}
+              {errors.area && touched.area ? <p className="form-errors">{errors.area}</p> : null}
             </div>
 
             <div className="input-box">
@@ -193,9 +177,7 @@ const Shipping = () => {
                 placeholder="Street Name/ House Number"
                 // required
               />
-              {errors.address && touched.address ? (
-                <p className="form-errors">{errors.address}</p>
-              ) : null}
+              {errors.address && touched.address ? <p className="form-errors">{errors.address}</p> : null}
             </div>
 
             <div className="input-box">
@@ -211,9 +193,7 @@ const Shipping = () => {
                 onBlur={handleBlur}
                 placeholder="E.g. Besides Bus Station"
               />
-              {errors.landmark && touched.landmark ? (
-                <p className="form-errors">{errors.landmark}</p>
-              ) : null}
+              {errors.landmark && touched.landmark ? <p className="form-errors">{errors.landmark}</p> : null}
             </div>
 
             {/* <div className="submit-btn">
@@ -234,25 +214,21 @@ const Shipping = () => {
             <>
               <div className="product-details">
                 <div className="product-title">{item.attributes.title}</div>
-                <div className="product-subtotal">
-                  &#8377;{item.attributes.price}
-                </div>
+                <div className="product-subtotal">&#8377;{item.attributes.price}</div>
               </div>
 
               <div className="product-image">
                 <img src={item.attributes.img.data[0].attributes.url} alt="" />
               </div>
 
-              <div className="quantity">
-                Quantity: {item.attributes.quantity}
-              </div>
+              <div className="quantity">Quantity: {item.attributes.quantity}</div>
 
               <div className="product-total">
                 <div>Product Total:</div>
                 <div>
                   <span>
-                    {item.attributes.quantity} * &#8377;{item.attributes.price}{" "}
-                    = &#8377;{item.attributes.quantity * item.attributes.price}
+                    {item.attributes.quantity} * &#8377;{item.attributes.price} = &#8377;
+                    {item.attributes.quantity * item.attributes.price}
                   </span>
                 </div>
               </div>
@@ -269,7 +245,15 @@ const Shipping = () => {
             <div>&#8377;{cartSubTotal + shippingCost}</div>
           </div>
 
-          <button onClick={() => submitForm()}>Place Order</button>
+          <button
+            onClick={() => {
+              submitForm();
+              if (!isValid) {
+                handleToast();
+              }
+            }}>
+            Place Order
+          </button>
         </div>
       </div>
     </div>
