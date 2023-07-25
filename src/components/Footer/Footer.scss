@@ -88,6 +88,13 @@
                     }
                 }
             }
+
+            img{
+               width: 300px;
+               @include md{
+                width: 350px;
+               }
+            }
         }
     }
 }
