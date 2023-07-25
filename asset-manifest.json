@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/hellostore-frontend/static/css/main.3c2e3f60.css",
-    "main.js": "/hellostore-frontend/static/js/main.301e5812.js",
+    "main.css": "/hellostore-frontend/static/css/main.9019bb70.css",
+    "main.js": "/hellostore-frontend/static/js/main.c8346347.js",
     "static/media/banner-img.png": "/hellostore-frontend/static/media/banner-img.0412d66280a0273effa2.png",
     "static/media/newsletter-bg.jpeg": "/hellostore-frontend/static/media/newsletter-bg.b6f22313149bdbb35069.jpeg",
+    "static/media/payment-logo.png": "/hellostore-frontend/static/media/payment-logo.5e9bf2f55f94ed18f2d8.png",
     "static/media/loading.png": "/hellostore-frontend/static/media/loading.2c62570639a711e080d8.png",
     "index.html": "/hellostore-frontend/index.html",
-    "main.3c2e3f60.css.map": "/hellostore-frontend/static/css/main.3c2e3f60.css.map",
-    "main.301e5812.js.map": "/hellostore-frontend/static/js/main.301e5812.js.map"
+    "main.9019bb70.css.map": "/hellostore-frontend/static/css/main.9019bb70.css.map",
+    "main.c8346347.js.map": "/hellostore-frontend/static/js/main.c8346347.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c2e3f60.css",
-    "static/js/main.301e5812.js"
+    "static/css/main.9019bb70.css",
+    "static/js/main.c8346347.js"
   ]
 }
