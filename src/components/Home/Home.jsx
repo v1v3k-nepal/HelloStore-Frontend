@@ -1,6 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import "./Home.scss"
 import Banner from "./Banner/Banner"
+import Slider from "./Banner/Slider"
 import Category from "./Category/Category"
 import Products from "../Products/Products"
 import fetchDataFromApi from '../../utils/api'
@@ -35,7 +36,7 @@ const Home = () => {
 
   return (
     <div>
-      <Banner/>
+      <Slider/>
       <div className="main-content">
         <div className="layout">
           <Category categories={categories}/>
