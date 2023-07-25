@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Footer.scss"
 import {FaLocationArrow, FaMobileAlt, FaEnvelope} from "react-icons/fa"
+import {FaHeart} from "react-icons/fa6"
 import Payment from "../../assets/payment-logo.png"
 
 const Footer = () => {
@@ -58,7 +59,7 @@ const Footer = () => {
       </div>
       <div className="bottom-bar">
         <div className="bottom-bar-content">
-          <span className="text">HELLOSTORE 2023 Coded With Love By <a href="https://viveknepal.com.np">Vivek Nepal</a></span>
+          <span className="text">HELLOSTORE 2023 Coded With <FaHeart/> By <a href="https://viveknepal.com.np">Vivek Nepal</a></span>
           <img src={Payment} alt="" />
         </div>
       </div>
