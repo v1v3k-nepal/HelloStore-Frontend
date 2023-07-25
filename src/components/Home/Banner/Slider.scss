@@ -2,8 +2,12 @@
 
 .slider-container {
   width: 100vw;
-  height: calc(100vh - 80px);
-  overflow: hidden;
+  height: 42vw;
+  //   height: 150px;
+  
+  //   @include xl{
+  //     height: calc(100vh - 80px);
+  //   }
 
   .slide {
     width: 100%;
@@ -13,36 +17,45 @@
 
     img {
       width: 100vw;
-      object-fit: cover;
       height: 100%;
+      @include md {
+        height: 100%;
+        width: 100vw;
+      }
+      object-fit: cover;
       transition: all ease 0.5s;
-    //   z-index: 1;
+      z-index: 1;
     }
 
-    .btn-container{
-        position:absolute;
+    .btn-container {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 2;
+      @include md {
         bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        gap: 15px;
-        // z-index: 2;
+      }
 
-
-        .btn{
-            background: transparent;
-            height: 20px;
-            width: 20px;
-            border-radius: 50%;
-            outline: none;
-            border: 2px solid #fff;
-            cursor: pointer;
+      .btn {
+        background: transparent;
+        height: 17px;
+        width: 17px;
+        @include md {
+          height: 20px;
+          width: 20px;
         }
+        border-radius: 50%;
+        outline: none;
+        border: 2px solid #fff;
+        cursor: pointer;
+      }
 
-        .active{
-            background: rgba(255,255,255,0.8);
-        }
-
+      .active {
+        background: rgba(255, 255, 255, 0.8);
+      }
     }
   }
 }

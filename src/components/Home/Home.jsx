@@ -27,8 +27,8 @@ const Home = () => {
       })
     }
 
-    getCategories();
-    getProducts();
+    // getCategories();
+    // getProducts();
 
   },[setCategories,setProducts]);
   

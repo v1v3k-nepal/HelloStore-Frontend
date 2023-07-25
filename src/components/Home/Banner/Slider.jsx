@@ -4,12 +4,13 @@ import Slide2 from "../../../assets/slide2.webp";
 import Slide3 from "../../../assets/slide3.webp";
 import Slide4 from "../../../assets/slide4.webp";
 import Slide5 from "../../../assets/slide5.webp";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slideImg = [Slide1, Slide2, Slide3, Slide4, Slide5];
+
 
   const navigateSlider = (index) => {
     setCurrentSlide(index);
