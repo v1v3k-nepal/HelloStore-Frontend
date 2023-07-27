@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hellostore-frontend/static/css/main.d76ba07f.css",
-    "main.js": "/hellostore-frontend/static/js/main.5ecab73d.js",
+    "main.js": "/hellostore-frontend/static/js/main.b939a0ca.js",
     "static/media/banner-img.png": "/hellostore-frontend/static/media/banner-img.0412d66280a0273effa2.png",
     "static/media/slide1.webp": "/hellostore-frontend/static/media/slide1.8ce58a044dda2a50854f.webp",
     "static/media/slide3.webp": "/hellostore-frontend/static/media/slide3.eab4d1695cfab239d284.webp",
@@ -13,10 +13,10 @@
     "static/media/loading.png": "/hellostore-frontend/static/media/loading.2c62570639a711e080d8.png",
     "index.html": "/hellostore-frontend/index.html",
     "main.d76ba07f.css.map": "/hellostore-frontend/static/css/main.d76ba07f.css.map",
-    "main.5ecab73d.js.map": "/hellostore-frontend/static/js/main.5ecab73d.js.map"
+    "main.b939a0ca.js.map": "/hellostore-frontend/static/js/main.b939a0ca.js.map"
   },
   "entrypoints": [
     "static/css/main.d76ba07f.css",
-    "static/js/main.5ecab73d.js"
+    "static/js/main.b939a0ca.js"
   ]
 }
