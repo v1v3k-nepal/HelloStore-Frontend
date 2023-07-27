@@ -16,9 +16,9 @@ const Search = ({ setShowSearch }) => {
     `/api/products?populate=*&filters[title][$contains]=${query}`
   );
 
-  // if (!query.length) {
-  //   data = null;
-  // }
+  if (!query.length) {
+    data = null;
+  }
 
   return (
     <div className="search-modal">
