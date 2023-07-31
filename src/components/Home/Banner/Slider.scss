@@ -2,13 +2,12 @@
 
 .slider-container {
   width: 100vw;
+  display: flex;
   height: 42.5vw;
   overflow: hidden;
-  //   height: 150px;
-  
-  //   @include xl{
-  //     height: calc(100vh - 80px);
-  //   }
+    @include xl{
+      height: calc(100vh - 80px);
+    }
 
   .slide {
     width: 100%;
@@ -19,10 +18,6 @@
     img {
       width: 100vw;
       height: 100%;
-      @include md {
-        height: 100%;
-        width: 100vw;
-      }
       object-fit: cover;
       transition: all ease 0.5s;
       z-index: 1;

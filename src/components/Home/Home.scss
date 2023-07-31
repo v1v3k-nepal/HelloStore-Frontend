@@ -1,5 +1,9 @@
 @import "../../css-config/mixins.scss";
 
+body{
+    overflow-x: hidden;
+}
+
 .main-content{
     .layout{
         max-width: calc(100% - 20px);
