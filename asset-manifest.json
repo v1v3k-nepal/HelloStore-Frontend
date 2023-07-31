@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hellostore/static/css/main.62dc4a59.css",
-    "main.js": "/hellostore/static/js/main.25749842.js",
+    "main.css": "/hellostore/static/css/main.f0945aa1.css",
+    "main.js": "/hellostore/static/js/main.d3b9a4d1.js",
     "static/media/banner-img.png": "/hellostore/static/media/banner-img.0412d66280a0273effa2.png",
     "static/media/slide1.webp": "/hellostore/static/media/slide1.8ce58a044dda2a50854f.webp",
     "static/media/slide3.webp": "/hellostore/static/media/slide3.eab4d1695cfab239d284.webp",
@@ -12,11 +12,11 @@
     "static/media/payment-logo.png": "/hellostore/static/media/payment-logo.5e9bf2f55f94ed18f2d8.png",
     "static/media/loading.png": "/hellostore/static/media/loading.2c62570639a711e080d8.png",
     "index.html": "/hellostore/index.html",
-    "main.62dc4a59.css.map": "/hellostore/static/css/main.62dc4a59.css.map",
-    "main.25749842.js.map": "/hellostore/static/js/main.25749842.js.map"
+    "main.f0945aa1.css.map": "/hellostore/static/css/main.f0945aa1.css.map",
+    "main.d3b9a4d1.js.map": "/hellostore/static/js/main.d3b9a4d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.62dc4a59.css",
-    "static/js/main.25749842.js"
+    "static/css/main.f0945aa1.css",
+    "static/js/main.d3b9a4d1.js"
   ]
 }
