@@ -23,6 +23,35 @@
       z-index: 1;
     }
 
+    .slide-btn{
+
+      .left-slide , .right-slide{
+        z-index: 4;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        outline: none;
+        font-size: 20px;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+        @include md{
+          font-size: 40px;
+          display: block;
+        }
+      }
+
+      .left-slide{
+        left: 5px;
+      }
+
+      .right-slide{
+        right: 5px;
+      }
+    }
+
     .btn-container {
       position: absolute;
       bottom: 10px;

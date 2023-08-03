@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from 'react'
 import "./Home.scss"
-import Banner from "./Banner/Banner"
+// import Banner from "./Banner/Banner"
 import Slider from "./Banner/Slider"
 import Category from "./Category/Category"
 import Products from "../Products/Products"

@@ -4,7 +4,8 @@ import { useNavigate } from 'react-router-dom'
 
 const Category = ({categories}) => {
   const navigate = useNavigate();
-  return (
+  if(!categories) return;
+  else return (
     <div className="shop-by-category">
       <div className="categories">
         {categories?.data?.map((item)=>(
