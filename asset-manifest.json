@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/hellostore/static/css/main.d24dc62f.css",
+    "main.css": "/hellostore/static/css/main.464d18b2.css",
     "main.js": "/hellostore/static/js/main.25964fdc.js",
     "static/media/slide1.webp": "/hellostore/static/media/slide1.8ce58a044dda2a50854f.webp",
     "static/media/slide3.webp": "/hellostore/static/media/slide3.eab4d1695cfab239d284.webp",
@@ -11,11 +11,11 @@
     "static/media/payment-logo.png": "/hellostore/static/media/payment-logo.5e9bf2f55f94ed18f2d8.png",
     "static/media/loading.png": "/hellostore/static/media/loading.2c62570639a711e080d8.png",
     "index.html": "/hellostore/index.html",
-    "main.d24dc62f.css.map": "/hellostore/static/css/main.d24dc62f.css.map",
+    "main.464d18b2.css.map": "/hellostore/static/css/main.464d18b2.css.map",
     "main.25964fdc.js.map": "/hellostore/static/js/main.25964fdc.js.map"
   },
   "entrypoints": [
-    "static/css/main.d24dc62f.css",
+    "static/css/main.464d18b2.css",
     "static/js/main.25964fdc.js"
   ]
 }
