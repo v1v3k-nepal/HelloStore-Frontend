@@ -1,5 +1,9 @@
 @import "../../../css-config/mixins.scss";
 
+body::-webkit-scrollbar{
+  width: 0;
+}
+
 .slider-container {
   width: 100vw;
   display: flex;

@@ -5,7 +5,7 @@ import Slide3 from "../../../assets/slide3.webp";
 import Slide4 from "../../../assets/slide4.webp";
 import Slide5 from "../../../assets/slide5.webp";
 import React, { useState } from "react";
-import { Swipeable, useSwipeable } from "react-swipeable";
+import {useSwipeable } from "react-swipeable";
 import {MdNavigateBefore, MdNavigateNext} from "react-icons/md"
 
 const Slider = () => {
