@@ -1,18 +1,13 @@
 import React from "react";
 import Product from "./Product/Product";
 import "./Products.scss";
-import Loading from "../../assets/loading.png"
+import ProductSkeleton from "./Product/ProductSkeleton";
 
 const Products = ({ innerPage, headingText, products }) => {
+
   if (!products) {
-    return (
-      <div className="progress-container">
-        <div>
-          <img className="loading-logo" src={Loading} alt="" />
-        </div>
-        <div><p>Fetching Product Data, Please Wait...</p></div>
-      </div>
-    );
+    return (<ProductSkeleton count={22}/>);
+
   } else
     return (
       <div className="products-container">

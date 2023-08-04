@@ -1,0 +1,95 @@
+@import "../../../css-config/mixins.scss";
+
+.section-heading{
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include md{
+        font-size: 24px;
+        margin-bottom: 35px;
+    }
+
+    &:after{
+        content: "";
+        display: block;
+        margin-top: 5px;
+        height: 3px;
+        width: 50px;
+        background: #8e2d8e;
+        @include md{
+            margin-top: 10px;
+        }
+    }
+}
+
+.prod-container{
+    display: flex;
+    flex-flow: wrap;
+    gap: 10px;
+    @include md{
+        gap:20px;
+    }
+
+    .prod-card{
+        width: calc(50% - 5px);
+        margin: 20px 0;
+        height: 205px;
+        border: 2px solid #efedfa;
+        padding: 20px;
+        border-radius: 10px;
+        background: #3d3d3d;
+        @include md{
+            width: calc(25% - 15px);
+            height: 380px;
+        }
+    
+        .thumbnail{
+            margin: 0 auto;
+            height: 60%;
+            width: 95%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            animation: LoadingSkeleton 2s linear infinite alternate;
+            @include md{
+                height: 70%;
+                width: 100%;
+            }
+        }
+    
+        .prod-details{
+            .name{
+                height: 10px;
+                animation: LoadingSkeleton 2s linear infinite alternate;
+                margin-bottom: 10px;
+                border-radius: 10px;
+                @include md{
+                    height: 20px;
+                }
+            }
+            .price{
+                height: 10px;
+                width: 60%;
+                border-radius: 10px;
+                animation: LoadingSkeleton 2s linear infinite alternate;
+                @include md{
+                    height: 20px;
+                }
+            }
+        }
+    }
+}
+
+@keyframes LoadingSkeleton {
+    // 0%{
+    //     background: hsl(247, 24%, 85%);
+    // }
+
+    50%{
+        background: hsl(240, 25%, 86%); 
+    }
+    // 100%{
+    //     background: hsl(228, 20%, 95%);
+    // }
+}
