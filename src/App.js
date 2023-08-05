@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter,HashRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 
 import Header from "./components/Header/Header";
@@ -15,7 +15,7 @@ import { SkeletonTheme } from "react-loading-skeleton";
 
 function App(){
     return(
-        <BrowserRouter>
+        <HashRouter>
             <AppContext>
             <SkeletonTheme baseColor="#d2d2e4" highlightColor="#bcbdc5">
                 <Header/>
@@ -31,7 +31,7 @@ function App(){
                 <Footer/>
                 </SkeletonTheme>
             </AppContext>
-        </BrowserRouter>
+        </HashRouter>
     );
 }
 
