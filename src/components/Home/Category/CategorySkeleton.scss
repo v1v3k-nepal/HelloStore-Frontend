@@ -1,0 +1,36 @@
+@import "../../../css-config/mixins.scss";
+
+.container{
+    margin: 25px 0;
+    @include md{
+        margin: 50px 0;
+    }
+
+    .categories{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: center;
+        gap: 10px;
+        background: #212121;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    
+        .category{
+            width: calc(50% - 5px);
+            height: 80px;
+            animation: LoadingSkeleton 2s linear infinite alternate;
+            border-radius: 5px;
+            @include md{
+                width: calc(25% - 10px);
+                height: 130px;
+            }
+        }
+    }
+}
+
+@keyframes LoadingSkeleton {
+    50% {
+      background: hsl(240, 25%, 86%);
+    }
+}

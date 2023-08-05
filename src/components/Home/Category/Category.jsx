@@ -1,10 +1,12 @@
 import React from 'react'
 import "./Category.scss"
 import { useNavigate } from 'react-router-dom'
+import CategorySkeleton from './CategorySkeleton';
 
 const Category = ({categories}) => {
   const navigate = useNavigate();
-  if(!categories) return;
+  if(!categories)
+  return(<CategorySkeleton count={4}/>)
   else return (
     <div className="shop-by-category">
       <div className="categories">

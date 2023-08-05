@@ -6,7 +6,12 @@ import ProductSkeleton from "./Product/ProductSkeleton";
 const Products = ({ innerPage, headingText, products }) => {
 
   if (!products) {
-    return (<ProductSkeleton count={22}/>);
+    return (
+      <>
+      <div className="sec-heading">{headingText}</div>
+      <ProductSkeleton count={22}/>
+      </>
+    );
 
   } else
     return (

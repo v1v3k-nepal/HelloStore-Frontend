@@ -3,8 +3,6 @@ import "./ProductSkeleton.scss";
 
 const ProductSkeleton = ({ count }) => {
   return (
-    <>
-    <div className="section-heading">Popular Products</div>
     <div className="prod-container">
       {Array(count).fill(0).map((item, index)=>(
         <div key={index} className="prod-card">
@@ -17,7 +15,6 @@ const ProductSkeleton = ({ count }) => {
       </div>
       ))}
     </div>
-    </>
   );
 };
 
