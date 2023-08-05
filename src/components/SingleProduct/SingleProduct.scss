@@ -1,9 +1,9 @@
 @import "../../css-config/mixins.scss";
 
 .single-product-main-content {
-  margin-top: 20px;
+  margin: 20px 0;
   @include md {
-    margin-top: 75px;
+    margin: 75px 0;
   }
 
   .layout {
@@ -25,6 +25,7 @@
       background-color: rgba(0, 0, 0, 0.05);
       flex-shrink: 0;
       width: 100%;
+      min-height: 300px;
       @include md {
         width: 600px;
         height: 600px;
@@ -41,6 +42,7 @@
       padding-top: 20px;
       @include md {
         padding: 0 35px;
+        min-width: 600px;
       }
 
       .name{
@@ -161,5 +163,12 @@
         }
       }
     }
+  }
+}
+
+.skeleton-img{
+  height: 45vh;
+  @include md{
+    height: 100%;
   }
 }

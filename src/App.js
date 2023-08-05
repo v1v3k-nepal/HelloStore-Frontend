@@ -10,12 +10,14 @@ import Footer from "./components/Footer/Footer";
 import AppContext from "./utils/context";
 import PaymentRedirection from "./components/PaymentStatus/PaymentRedirection";
 import Shipping from "./components/Cart/Shipping/Shipping"
+import { SkeletonTheme } from "react-loading-skeleton";
 
 
 function App(){
     return(
         <BrowserRouter>
             <AppContext>
+            <SkeletonTheme baseColor="#d2d2e4" highlightColor="#bcbdc5">
                 <Header/>
                 <Routes>
                     <Route path="/hellostore" element={<Home/>}/>
@@ -27,6 +29,7 @@ function App(){
                 </Routes>
                 <Newsletter/>
                 <Footer/>
+                </SkeletonTheme>
             </AppContext>
         </BrowserRouter>
     );
