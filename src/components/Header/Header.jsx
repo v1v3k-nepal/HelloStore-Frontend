@@ -42,7 +42,7 @@ const Header = () => {
               <li>About</li>
               <li>Category</li>
             </ul>
-          <div className="center" onClick={()=> navigate("/hellostore")}>HELLOSTORE.</div>
+          <div className="center" onClick={()=> navigate("/hellostore")}>HELLOVIVEK.</div>
           <div className="right">
             <TbSearch onClick={()=>setShowSearch(true)}/>
             <AiOutlineHeart/>
