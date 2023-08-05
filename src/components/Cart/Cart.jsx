@@ -31,7 +31,7 @@ const Cart = () => {
                   <BsCartX/>
                   <span>No Products in the Cart.</span>
                   <button className="return-cta" 
-                  onClick={()=> {navigate("/hellostore"); setShowCart(false)}}>
+                  onClick={()=> {navigate("/"); setShowCart(false)}}>
                     RETURN TO SHOP
                   </button>
                 </div>

@@ -6,7 +6,7 @@ const Product = ({productData, id}) => {
   const navigate = useNavigate();
   return (
     <div className='product-card' 
-    onClick={ ()=> navigate("/hellostore/product/"+id)}>
+    onClick={ ()=> navigate("/product/"+id)}>
 
       <div className="thumbnail">
         <img src={

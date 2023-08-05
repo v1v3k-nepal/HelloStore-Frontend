@@ -20,11 +20,10 @@ function App(){
             <SkeletonTheme baseColor="#d2d2e4" highlightColor="#bcbdc5">
                 <Header/>
                 <Routes>
-                    <Route path="/hellostore" element={<Home/>}/>
                     <Route path="/" element={<Home/>}/>
-                    <Route path="/hellostore/category/:id" element={<Category/>}/>
-                    <Route path="/hellostore/product/:id" element={<SingleProduct/>}/>
-                    <Route exact path="/hellostore/payment/" element={<PaymentRedirection/>}/>
+                    <Route path="/category/:id" element={<Category/>}/>
+                    <Route path="/product/:id" element={<SingleProduct/>}/>
+                    <Route exact path="/payment/" element={<PaymentRedirection/>}/>
                     <Route path="/shipping" element={<Shipping/>}/>
                 </Routes>
                 <Newsletter/>
