@@ -37,7 +37,7 @@ const PaymentRedirection = () => {
       setData(data);
       console.log(storedPidxValue);
       checkStatus(storedPidxValue);
-      navigate("/hellostore-frontend/payment")
+      navigate("/payment")
     },[])
 
     useEffect(()=>{
