@@ -58,7 +58,7 @@ const SingleProduct = () => {
                 <div className="cart-buttons">
                   <div className="quantity-buttons">
                     <span onClick={decrement}>-</span>
-                    <span>{quantity || 1}</span>
+                    <span>{quantity}</span>
                     <span onClick={increment}>+</span>
                   </div>
 
@@ -66,7 +66,8 @@ const SingleProduct = () => {
                     className="add-to-cart-button"
                     onClick={() => {
                       // handleAddToCart(data?.data?.[0], quantity);
-                      handleAddToCart(apiData[0], quantity);
+                      handleAddToCart(apiData?.data[0], quantity);
+                      setQuantity(1);
                       toast.success("Product Added To Cart");
                     }}>
                     <FaCartPlus size={20} />
