@@ -9,7 +9,7 @@ const Products = ({ innerPage, headingText, products }) => {
     return (
       <>
       <div className="sec-heading">{headingText}</div>
-      <ProductSkeleton count={22}/>
+      <ProductSkeleton count={10}/>
       </>
     );
 
