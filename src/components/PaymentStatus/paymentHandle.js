@@ -34,9 +34,9 @@ export const handleKhaltiPayment = async (cartItems, cartSubTotal, customerInfo)
 
     const data = await response.json();
     localStorage.setItem("pidxValue", data.pidx);
-    const currentUrl = window.location.href;
+    // const currentUrl = window.location.href;
     // Redirect the user to the payment_url obtained from the response
-    if (data.payment_url != undefined) {
+    if (data.payment_url !== undefined) {
       window.location.href = data.payment_url;
     } else {
       console.log(data);
@@ -47,6 +47,8 @@ export const handleKhaltiPayment = async (cartItems, cartSubTotal, customerInfo)
     console.log(error);
   }
 };
+
+
 
 export const paymentVerificationKhalti = async (pidxValue) => {
   try {
@@ -67,4 +69,43 @@ export const paymentVerificationKhalti = async (pidxValue) => {
     console.log(error);
   }
 };
+
+
+// export const handleKhaltiPayment = async (cartItems, cartSubTotal, customerInfo) =>{
+
+//   const apiUrl = "http://localhost:1337/api/orders";
+
+// const payload = {
+//   data: {
+//     cartItems,
+//     cartSubTotal,
+//     customerInfo,
+//   }
+// };
+
+// try {
+//   const response = await fetch(apiUrl, {
+//     method: "POST",
+//     headers: {
+//       Authorization : "bearer " + process.env.REACT_APP_STRAPI_APP_KEY,
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify(payload),
+//   });
+
+//   const data = await response.json();
+//   console.log(data);
+
+//   if (data.payment_url !== undefined) {
+//     window.location.href = data.payment_url;
+//   } else {
+//     console.log(data);
+//   }
+  
+//   return data;
+// } catch (error) {
+//   console.log(error);
+// }
+
+// }
 
